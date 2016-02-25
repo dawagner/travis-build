@@ -30,6 +30,7 @@ module Travis
             sh.fold 'cache.ccache' do
               sh.echo ''
               directory_cache.add('~/.ccache')
+              sh.export 'PATH', "/usr/lib/ccache:$PATH"
             end
           end
         end
